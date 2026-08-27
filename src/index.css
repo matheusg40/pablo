@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Tokens de tema (espelham a referência PG_NINJA — valores em oklch)
+--------------------------------------------------------------------------- */
+@theme {
+  --color-ink: oklch(12% 0.03 280);
+  --color-magenta: oklch(65% 0.29 350);
+  --color-electric: oklch(52% 0.28 268);
+  --color-cyan-pop: oklch(78% 0.16 210);
+  --color-purple: oklch(42% 0.22 296);
+  --color-foreground: oklch(98% 0.005 280);
+
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  /* Fundo: gradiente roxo escuro (idêntico à referência) sobre base quase preta */
+  background-color: #05030a;
+  background-image: linear-gradient(
+    oklch(0.22 0.12 300) 0%,
+    oklch(0.28 0.16 300) 55%,
+    oklch(0.42 0.22 296) 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Textura de rabisco muito sutil por cima do fundo (grão discreto) */
+.bg-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.5'%3E%3Cpath d='M10 30 Q30 10 50 30 T90 30'/%3E%3Cpath d='M20 80 Q45 60 70 80 T115 80'/%3E%3Ccircle cx='95' cy='20' r='6'/%3E%3Cpath d='M5 105 L25 95 M60 110 L80 100'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 300px;
+}
